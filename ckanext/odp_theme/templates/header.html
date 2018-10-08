@@ -1,18 +1,4 @@
-{% block header_wrapper %}
-
-<!-- City of Philadelphia Tracking Tag -->
-
-<!-- Google Tag Manager [opendataphilly.org] -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5X557V"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5X557V');</script>
-<!-- End Google Tag Manager -->
-
-{% block header_account %}
+{% block header_wrapper %} {% block header_account %}
 <header class="account-masthead">
   <div class="container">
     {% block header_account_container_content %} {% if c.userobj %}
@@ -85,7 +71,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
     <hgroup class="{{ g.header_class }} navbar-left">
       {% block header_logo %} {% if g.site_logo %}
-      <a class="logo" href="{{ h.url_for('home.index') }}"><img src="/img/odp-logo.png" srcset="/img/odp-logo@2x.png 2x" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
+      <a class="logo" href="{{ h.url_for('home.index') }}"><img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
       {% else %}
       <h1>
         <a href="{{ h.url_for('home.index') }}">{{ g.site_title }}</a>
